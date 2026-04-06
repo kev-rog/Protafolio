@@ -12,6 +12,8 @@
   --text-soft: #c4d4ea;
   --accent: #4ea1ff;
   --accent-dark: #2f7ed9;
+  --accent-warm: #ffd34d;
+  --accent-warm-soft: #ffe38a;
   --border: rgba(255, 255, 255, 0.14);
   --shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
 }
@@ -73,8 +75,8 @@ body {
   gap: 0.5rem;
   padding: 0.45rem 0.9rem;
   border-radius: 999px;
-  background: rgba(78, 161, 255, 0.14);
-  color: #cbe3ff;
+  background: linear-gradient(135deg, rgba(78, 161, 255, 0.16), rgba(255, 211, 77, 0.18));
+  color: #eef5ff;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.8rem;
@@ -97,7 +99,7 @@ body {
 }
 
 .hero-card-label {
-  color: var(--accent);
+  color: var(--accent-warm);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.8rem;
@@ -180,17 +182,17 @@ body {
 }
 
 .btn-highlight {
-  background-color: var(--accent);
-  border: 1px solid var(--accent);
+  background: linear-gradient(135deg, var(--accent), #75b8ff);
+  border: 1px solid rgba(132, 193, 255, 0.8);
   color: #06111f;
   font-weight: 700;
 }
 
 .btn-highlight:hover,
 .btn-highlight:focus {
-  background-color: var(--accent-dark);
-  border-color: var(--accent-dark);
-  color: #eef6ff;
+  background: linear-gradient(135deg, var(--accent-warm), #ffc93c);
+  border-color: rgba(255, 211, 77, 0.92);
+  color: #1d1704;
 }
 
 .btn-outline-light {
@@ -200,9 +202,31 @@ body {
 
 .btn-outline-light:hover,
 .btn-outline-light:focus {
-  background-color: rgba(78, 161, 255, 0.12);
-  border-color: rgba(132, 193, 255, 0.9);
+  background-color: rgba(255, 211, 77, 0.1);
+  border-color: rgba(255, 221, 120, 0.9);
   color: #ffffff;
+}
+
+.info-panel h2,
+.feature-card h3,
+.tech-card h3,
+.project-card h3,
+.contact-panel h2 {
+  position: relative;
+}
+
+.info-panel h2::after,
+.feature-card h3::after,
+.tech-card h3::after,
+.project-card h3::after,
+.contact-panel h2::after {
+  content: "";
+  display: block;
+  width: 56px;
+  height: 3px;
+  margin-top: 0.7rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent-warm), rgba(255, 211, 77, 0.1));
 }
 
 .info-panel,
@@ -399,7 +423,7 @@ body {
 .project-badge {
   display: inline-block;
   margin-bottom: 1rem;
-  color: var(--accent);
+  color: var(--accent-warm-soft);
   font-size: 0.85rem;
   font-weight: 700;
 }
